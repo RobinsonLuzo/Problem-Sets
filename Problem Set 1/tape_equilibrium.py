@@ -5,8 +5,9 @@
 # We then get the absolute difference between the 2 subtracted and move P along another position
 # E.g. say A = [3, 1, 2, 4, 3]
 # for P = 0, we would like to see the absolute difference between 3 - (1 + 2 + 4 + 3) which = 7
+from typing import List
 
-def tape_equilibrium(A):
+def tape_equilibrium(A: List[int]):
     N = len(A)
     largest_diff = 0
 
@@ -18,5 +19,8 @@ def tape_equilibrium(A):
 
     return largest_diff
 
+
 # Test case:
-print(tape_equilibrium([3, 1, 2, 4, 3])) # expects 7
+print(tape_equilibrium([3, 1, 2, 4, 3]))       # expects 7
+print(tape_equilibrium([3, 10, 6, 4, 8]))      # expects 16
+print(tape_equilibrium([13, 7, 5, 21, 19, 2])) # expects 63
