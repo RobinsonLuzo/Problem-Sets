@@ -24,6 +24,7 @@ def sort_squared_array(arr: List[int]):
 
     # Move in -1 decrements
     for i in range(length-1, -1, -1):
+        # If left value is greater
         if abs(arr[left]) > abs(arr[right]):
             output[i] = arr[left] * arr[left]
             left += 1
@@ -32,6 +33,9 @@ def sort_squared_array(arr: List[int]):
             right -= 1
     return output
 
+
+# Test cases:
 print(sort_squared_array([1, 2, 3, 4]))           # Expects: [1, 4, 9, 16] 
 print(sort_squared_array([-3, -2, -1]))           # Expects: [1, 4, 9] 
-
+print(sort_squared_array([-7, -3, -1, 4, 8, 12])) # Expects: [1, 9, 16, 49, 64, 144] 
+print(sort_squared_array([-6, -4, 1, 2, 3, 5]))   # Expects: [1, 4, 9, 16, 25, 36] 
