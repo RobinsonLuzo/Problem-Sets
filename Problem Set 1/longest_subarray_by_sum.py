@@ -40,6 +40,4 @@ def find_longest_subarray_by_sum(arr, s):
 
 
 # Test cases:
-print(find_longest_subarray_by_sum([1, 2, 3, 7, 5], 12))                          # Expects: 2, 4
-print(find_longest_subarray_by_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15))          # Expects: 1, 5
-print(find_longest_subarray_by_sum([1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10], 15)) # Expects: 1, 8
+assert find_longest_subarray_by_sum([1, 2, 3, 7, 5], 12) == [2, 4]
