@@ -7,8 +7,9 @@
 
 # E.g. for array [1, 2, 3, 7, 5] we should expect [2, 4] as 2 + 3 + 7 = 12.
 # 7 + 5 also = 12, but is shorter.
+from typing import List
 
-def find_longest_subarray_by_sum(arr, s):
+def find_longest_subarray_by_sum(arr: List[int], s: int):
     """
     Takes in:
     - arr: an array of integers
@@ -23,7 +24,7 @@ def find_longest_subarray_by_sum(arr, s):
     left = 0
     right = 0
 
-    # As the right pointer will reach the end first we use that in the condition
+    # As the right pointer will reach the end first, we use that in the condition
     while right < len(arr):
         total_sum += arr[right]
         while left < right and total_sum > s:
@@ -40,4 +41,6 @@ def find_longest_subarray_by_sum(arr, s):
 
 
 # Test cases:
-assert find_longest_subarray_by_sum([1, 2, 3, 7, 5], 12) == [2, 4]
+print(find_longest_subarray_by_sum([1, 2, 3, 7, 5], 12))                          # Expects: 2, 4
+print(find_longest_subarray_by_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15))          # Expects: 1, 5
+print(find_longest_subarray_by_sum([1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10], 15)) # Expects: 1, 8
