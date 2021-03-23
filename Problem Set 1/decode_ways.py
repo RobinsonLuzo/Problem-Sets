@@ -41,5 +41,7 @@ def num_decodings(msg: str):
 
 
 # test cases:
-print(num_decodings("12"))  # Expects: 2
-print(num_decodings("111")) # Expects: 3
+print(num_decodings("12"))    # Expects: 2
+print(num_decodings("111"))   # Expects: 3
+print(num_decodings("011"))   # Expects: 0
+print(num_decodings("12345")) # Expects: 3
