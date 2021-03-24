@@ -6,7 +6,7 @@
 # 9 is 1001 so it would return 2
 import re
 
-def solution(n):
+def solution(n: int) -> int:
     """Presumes n is > 1"""
     max_count = 0
     bytes_rep = str(bin(n))[2:]
@@ -19,6 +19,8 @@ def solution(n):
         return 0
 
 
+# Test cases:
 print(solution(1041)) # Expect 5 - 10000010001.
 print(solution(9))    # Expect 2
+print(solution(131))  # Expect 5
 print(solution(32))   # Expect 0
