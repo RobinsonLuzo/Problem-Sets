@@ -11,7 +11,7 @@
 # Note: "01" should return 0.
 
 # Look at the last k letters of the msg
-def decode_ways(msg: str, k: int, inter_result):
+def decode_ways(msg: str, k: int, inter_result) -> int:
     """
     Returns number of ways last k letters of msg can be decoded. Helper method to num_decodings().
     """
@@ -34,7 +34,7 @@ def decode_ways(msg: str, k: int, inter_result):
     return result
 
 
-def num_decodings(msg: str):
+def num_decodings(msg: str) -> int:
     """How many ways can a given string be decoded. Returns an integer."""
     intermediate_results = [None] * (len(msg) + 1)
     return decode_ways(msg, len(msg), intermediate_results)
