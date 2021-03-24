@@ -5,9 +5,10 @@
 # E.g. nums=[1, 2, 3, 4], position output[0] should be 24 as nums[1:] = 2x3x4
 # Make a version that does this by division and another that does not.
 from functools import reduce
+from typing import List
 
 
-def product_except_self(nums):
+def product_except_self(nums: List[int]) -> List[int]:
     """
     Initial simple version. Mulitply all elements in the array conscutively to get the product.
     Then divide that product by each element in the input array to get the result for output[i].
@@ -27,7 +28,7 @@ print(product_except_self([1, 5, 3, 9])) # Expects: [135, 27, 45, 15]
 print(product_except_self([-5, 2, -4]))  # Expects: [-8, 20, -10]
 
 
-def product_except_self2(nums):
+def product_except_self2(nums: List[int]) -> List[int]:
     """
     Version without division. There are 3 loops here:
     1. Calculates all the produces left of position i.
