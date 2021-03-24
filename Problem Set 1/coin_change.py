@@ -5,8 +5,9 @@
 # E.g. using [1, 5, 10, 25] to make 12 the result should be 3 coins: 1, 1, 10
 
 # Greedy method: highest coin values first and see if that goes into the change, moving succesively down.
+from typing import List
 
-def greedy_coin_change(change):
+def greedy_coin_change(change: int) -> int:
     """
     Greedy method of change making. 
     Given change take the highest value coins first and see if the coin goes into the change.
@@ -44,7 +45,7 @@ print(greedy_coin_change(100)) # Expects: 4
 #    5 |  0   0   0    1    2
 #    10|  0   0   0    0    1
 
-def _change_matrix(coin_set, change_amt):
+def _change_matrix(coin_set: List[int], change_amt: int) -> List[List[int]]:
     """
     Hidden helper function to generate a coin matrix for a given set of coins to a given amount of change. 
 
@@ -61,7 +62,7 @@ def _change_matrix(coin_set, change_amt):
     return matrix
 
 
-def dynamic_change_making(coins, change):
+def dynamic_change_making(coins: List[int], change: int) -> int:
     """
     Dynamic method of finding the minimum number of coins to make a given amount of change.
 
@@ -95,7 +96,7 @@ def dynamic_change_making(coins, change):
 print("\nDynamic method:")
 # Using greedy method the below example would have used 25, then 1 to return 8.
 # Best method would be to use 3 10s and 2 1s for a total of 5.
-print(dynamic_change_making([1, 10, 25], 32)) # Expects 5 -> 3x10, 2x1
 
+print(dynamic_change_making([1, 10, 25], 32)) # Expects 5 -> 3x10, 2x1
 print(dynamic_change_making([1, 10, 25], 72)) # Expects 6 -> 2x25, 2x10, 2x1
 print(dynamic_change_making([1, 10, 25], 17)) # Expects 8 -> 1x10, 7x1
