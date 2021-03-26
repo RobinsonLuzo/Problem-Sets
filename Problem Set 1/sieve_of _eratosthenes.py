@@ -7,9 +7,9 @@
 # Then the value should increment by 1 and continue.
 # The values that remain True at the end of the algorithm are the primes
 
-def sieveOfEratosthenes(n):
+def sieveOfEratosthenes(n: int):
     """ 
-    Display the prime numbers up to n
+    Display the prime numbers up to n.
     """
     # Primes list - True by default.
     primes = [True for number in range(n + 1)]
