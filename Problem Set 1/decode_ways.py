@@ -9,9 +9,11 @@
 # Given a non empty string of digits return the number of ways to decode it.
 # E.g. "12" should return 2 as there are 2 ways to decode it: "AB" (1, 2) or "L" (12)
 # Note: "01" should return 0.
+from typing import List
 
-# Look at the last k letters of the msg
-def decode_ways(msg: str, k: int, inter_result) -> int:
+
+# Look at the last k letters of the msg:
+def decode_ways(msg: str, k: int, inter_result: List[int]) -> int:
     """
     Returns number of ways last k letters of msg can be decoded. Helper method to num_decodings().
     """
