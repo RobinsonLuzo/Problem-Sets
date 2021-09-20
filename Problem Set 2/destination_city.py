@@ -22,8 +22,20 @@ def dest_city(paths: List[List[str]]) -> str:
             return city
 
 
+def dest_city_alt(paths: List[List[str]]) -> str:
+    """
+    Alternative version using unzipping and sets.
+    """
+    A, B = map(set, zip(*paths))
+    return (B-A).pop()
+
+
 # Test cases:
 class TestDestCity(unittest.TestCase):
     def test_dest_city(self):
         self.assertEqual(dest_city([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]), "Sao Paulo")
         self.assertEqual(dest_city([["B", "C"], ["D", "B"], ["C", "A"]]), "A")
+
+    def test_dest_city_alt(self):
+        self.assertEqual(dest_city_alt([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]), "Sao Paulo")
+        self.assertEqual(dest_city_alt([["B", "C"], ["D", "B"], ["C", "A"]]), "A")
