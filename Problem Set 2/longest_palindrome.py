@@ -22,6 +22,8 @@ def longest_palindrome(s: str) -> int:
         if char_count[char] % 2 == 0:
             final_count += char_count[char]
         else:
+            # in case of a character occuring an odd number of times but > 1 add the count but subtract 1 so it is even.
+            final_count += (char_count[char] - 1)
             odd_is_present = True
 
     # If there is at least 1 odd number increment final result by 1
@@ -34,6 +36,6 @@ def longest_palindrome(s: str) -> int:
 # Test cases:
 class TestLongestPalin(unittest.TestCase):
     def test_longest_palindrome(self):
-        self.assertEqual(longest_palindrome("abccccdd"),
-                         7)  # Should be: "dccaccd"
+        self.assertEqual(longest_palindrome("abccccdd"), 7)  # Should be: "dccaccd"
         self.assertEqual(longest_palindrome("s"), 1)
+        self.assertEqual(longest_palindrome("ccc"), 3)
