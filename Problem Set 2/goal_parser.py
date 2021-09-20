@@ -14,3 +14,4 @@ def interpret(command: str) -> str:
 class TestInterpret(unittest.TestCase):
     def test_intepret(self):
         self.assertEqual(interpret("G()(al)"), "Goal")
+        self.assertEqual(interpret("(al)G(al)()()G"), "alGalooG")
