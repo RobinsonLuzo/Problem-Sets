@@ -15,6 +15,6 @@ def restore_string(s: str, indicies: List[int]) -> str:
     return answer
 
 
-class TestCuboid(unittest.TestCase):
-    def test_volume(self):
+class TestShuffle(unittest.TestCase):
+    def test_restore_string(self):
         self.assertEqual(restore_string("codeleet", [4, 5, 6, 7, 0, 2, 1, 3]), "leetcode")
