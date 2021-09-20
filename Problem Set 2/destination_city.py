@@ -25,6 +25,9 @@ def dest_city(paths: List[List[str]]) -> str:
 def dest_city_alt(paths: List[List[str]]) -> str:
     """
     Alternative version using unzipping and sets.
+
+    Use map to apply the set operation to both (unzipped) lists. 
+    Then use the difference for what is in set B that is not in set A.
     """
     A, B = map(set, zip(*paths))
     return (B-A).pop()
